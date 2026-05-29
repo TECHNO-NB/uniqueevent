@@ -1,4 +1,5 @@
 // @ts-nocheck
+"use client";
 import Card from "./Card";
 
 export default function StatCard({

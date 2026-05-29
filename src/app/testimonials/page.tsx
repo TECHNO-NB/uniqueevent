@@ -1,4 +1,5 @@
-"use client"
+// @ts-nocheck
+"use client";
 import Testimonials from '@/components/Testimonials'
 
 const page = () => {

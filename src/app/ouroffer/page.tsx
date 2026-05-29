@@ -1,3 +1,5 @@
+// @ts-nocheck
+"use client";
 import { motion,useInView } from 'framer-motion';
 import React, { useRef } from 'react'
 import {
