@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mithila Tech & IT Solutions",
+  title: "Uniqe Events",
   description:
     "Mithila Tech & IT Solutions provides modern web development, mobile apps, UI/UX design, and digital solutions to grow your business online.",
 
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Mithila Tech & IT Solutions",
     images: [
       {
-        url: "/mithilatechlogo.jpeg",
+        url: "/logo.jpeg",
         width: 1200,
         height: 630,
         alt: "Mithilatech Preview"
@@ -66,9 +66,9 @@ export const metadata: Metadata = {
   },
 
   icons: {
-    icon: "/mithilatechlogo.jpeg",
-    shortcut: "/mithilatechlogo.jpeg",
-    apple: "/mithilatechlogo.jpeg"
+    icon: "/logo.jpeg",
+    shortcut: "/logo.jpeg",
+    apple: "/logo.jpeg"
   },
 
   robots: {
