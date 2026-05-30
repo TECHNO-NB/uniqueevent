@@ -134,7 +134,7 @@ const Page = () => {
                 {
                   icon: Mail,
                   label: "Email",
-                  value: "hello@uniqueevent.com.np",
+                  value: "info@uniqueeventsplanner.com",
                 },
                 {
                   icon: Clock,
