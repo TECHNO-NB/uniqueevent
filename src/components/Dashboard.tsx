@@ -20,12 +20,12 @@ const API = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/v1`,
 });
 
-type Tab = "dashboard" | "blogs" | "contacts"  | "users";
+type Tab = "dashboard" | "services" | "contacts"  | "users";
 
 // ─── Dashboard ────────────────────────────────────────────────────────────────
 export default function Dashboard({ setTab }: { setTab: (t: Tab) => void }) {
   const [counts, setCounts] = useState({
-    blogs: 0,
+    services: 0,
     contacts: 0,
     users: 0,
   });
@@ -33,7 +33,7 @@ export default function Dashboard({ setTab }: { setTab: (t: Tab) => void }) {
   useEffect(() => {
     const token=localStorage.getItem("token")
     Promise.allSettled([
-      API.get("/blogs"),
+      API.get("/weddingservices"),
       API.get("/contacts",{
         headers:{
           Authorization:`Bearer ${token}`
@@ -46,7 +46,7 @@ export default function Dashboard({ setTab }: { setTab: (t: Tab) => void }) {
       }),
     ]).then(([b, c, u]) => {
       setCounts({
-        blogs: b.status === "fulfilled" ? b.value.data.length : 0,
+        services: b.status === "fulfilled" ? b.value.data.length : 0,
         contacts: c.status === "fulfilled" ? c.value.data.length : 0,
         users: u.status === "fulfilled" ? u.value.data.length : 0,
       });
@@ -54,7 +54,7 @@ export default function Dashboard({ setTab }: { setTab: (t: Tab) => void }) {
   }, []);
 
   const quickActions: { label: string; tab: Tab; icon: React.ReactNode }[] = [
-    { label: "New Blog Post", tab: "blogs", icon: <FileText size={16} /> },
+    { label: "New Services Post", tab: "services", icon: <FileText size={16} /> },
     {
       label: "View Contacts",
       tab: "contacts",
@@ -92,8 +92,8 @@ export default function Dashboard({ setTab }: { setTab: (t: Tab) => void }) {
       >
         <StatCard
           icon={<FileText size={20} />}
-          label="Blog Posts"
-          value={counts.blogs}
+          label="Services Posts"
+          value={counts.services}
           sub="Total published"
           color="#c9a84c"
         />

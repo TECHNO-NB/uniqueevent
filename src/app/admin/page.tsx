@@ -20,10 +20,11 @@ import UsersPanel from "@/components/UsersPanel";
 import ContactsPanel from "@/components/ContactPanel";
 import BlogsPanel from "@/components/BlogsPanel";
 import Dashboard from "@/components/Dashboard";
+import GalleryPanel from "@/components/GalleryPanel";
 
 
 
-type Tab = "dashboard" | "blogs" | "contacts" | "users";
+type Tab = "dashboard" | "services" | "gallery" | "contacts" | "users";
 
 
 // ─── Toast ────────────────────────────────────────────────────────────────────
@@ -51,7 +52,8 @@ export default function AdminPanel() {
       icon: <LayoutDashboard size={18} />,
       label: "Dashboard",
     },
-    { key: "blogs", icon: <FileText size={18} />, label: "Blogs" },
+    { key: "services", icon: <FileText size={18} />, label: "Services" },
+    { key: "gallery", icon: <FileText size={18} />, label: "Gallery" },
     { key: "contacts", icon: <MessageSquare size={18} />, label: "Contacts" },
     { key: "users", icon: <Users size={18} />, label: "Users" },
   ];
@@ -335,7 +337,8 @@ export default function AdminPanel() {
         {/* Page Content */}
         <div style={{ flex: 1, padding: "28px", overflowY: "auto" }}>
           {tab === "dashboard" && <Dashboard setTab={setTab} />}
-          {tab === "blogs" && <BlogsPanel addToast={addToast} />}
+          {tab === "services" && <BlogsPanel addToast={addToast} />}
+          {tab === "gallery" && <GalleryPanel addToast={addToast} />}
           {tab === "contacts" && <ContactsPanel addToast={addToast} />}
           {tab === "users" && <UsersPanel addToast={addToast} />}
         </div>

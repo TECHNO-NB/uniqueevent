@@ -52,6 +52,7 @@ const Footer = () => {
         </div>
         <div className="w-10 h-px bg-gold mx-auto mb-5" />
         <p className="text-xs">© {new Date().getFullYear()} Unique Event. All rights reserved. Made with <Heart size={10} className="inline text-rose" fill="currentColor" /> in Manigram.</p>
+        <div className=" text-center mt-6 text-blue ">  <a href="https://mithilatechsolutions.com/" className="w-full  text-blue-500 underline mt-6 text-center ">Developed By Mithila Tech & IT Solutions</a></div>
       </footer>
   
   );

@@ -5,15 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import dynamic from "next/dynamic";
 
-import {
-  Plus,
-  Save,
-  Trash2,
-  Upload,
-  X,
-  Star,
-  ImagePlus,
-} from "lucide-react";
+import { Plus, Save, Trash2, Upload, X, Star, ImagePlus } from "lucide-react";
 
 import GoldButton from "./GoldButton";
 import Card from "./Card";
@@ -189,7 +181,7 @@ export default function VenuesPanel({ addToast }) {
 
   // ───────────────── FILTER ─────────────────
   const filtered = venues.filter((venue) =>
-    venue.title.toLowerCase().includes(search.toLowerCase())
+    venue.title.toLowerCase().includes(search.toLowerCase()),
   );
 
   return (
@@ -331,13 +323,9 @@ export default function VenuesPanel({ addToast }) {
             >
               <ImagePlus size={22} />
 
-              <p style={{ marginTop: 10 }}>
-                Upload Venue Photos
-              </p>
+              <p style={{ marginTop: 10 }}>Upload Venue Photos</p>
 
-              <small style={{ color: "#777" }}>
-                Multiple photos supported
-              </small>
+              <small style={{ color: "#777" }}>Multiple photos supported</small>
             </div>
 
             <input
@@ -354,8 +342,7 @@ export default function VenuesPanel({ addToast }) {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns:
-                    "repeat(auto-fill,minmax(140px,1fr))",
+                  gridTemplateColumns: "repeat(auto-fill,minmax(140px,1fr))",
                   gap: 14,
                   marginTop: 18,
                 }}
@@ -406,10 +393,7 @@ export default function VenuesPanel({ addToast }) {
           </div>
 
           {/* SUBMIT */}
-          <GoldButton
-            onClick={handleCreate}
-            disabled={submitting}
-          >
+          <GoldButton onClick={handleCreate} disabled={submitting}>
             <Save size={15} />
 
             {submitting ? "Saving..." : "Save Venue"}
@@ -439,7 +423,7 @@ export default function VenuesPanel({ addToast }) {
       ) : filtered.length === 0 ? (
         <p style={{ color: "#777" }}>No venues found</p>
       ) : (
-        filtered.map((venue) => (
+        filtered?.map((venue) => (
           <Card
             key={venue.id}
             style={{
@@ -451,13 +435,12 @@ export default function VenuesPanel({ addToast }) {
               <div
                 style={{
                   display: "grid",
-                  gridTemplateColumns:
-                    "repeat(auto-fill,minmax(140px,1fr))",
+                  gridTemplateColumns: "repeat(auto-fill,minmax(140px,1fr))",
                   gap: 12,
                   marginBottom: 18,
                 }}
               >
-                {venue.photos.map((photo, index) => (
+                {venue?.photos?.map((photo, index) => (
                   <img
                     key={index}
                     src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/${photo}`}
@@ -482,9 +465,7 @@ export default function VenuesPanel({ addToast }) {
                 marginBottom: 10,
               }}
             >
-              <h3 style={{ margin: 0 }}>
-                {venue.title}
-              </h3>
+              <h3 style={{ margin: 0 }}>{venue.title}</h3>
 
               {venue.is_featured && (
                 <span
@@ -533,7 +514,8 @@ export default function VenuesPanel({ addToast }) {
             </div>
 
             {/* FEATURES ARRAY */}
-            {venue.features?.length > 0 && (
+            {/* FEATURES ARRAY */}
+            {venue?.features?.length > 0 && (
               <div
                 style={{
                   display: "flex",
@@ -542,7 +524,10 @@ export default function VenuesPanel({ addToast }) {
                   marginBottom: 18,
                 }}
               >
-                {venue.features.map((feature, index) => (
+                {(typeof venue.features === "string"
+                  ? JSON.parse(venue.features)
+                  : venue.features
+                )?.map((feature, index) => (
                   <span
                     key={index}
                     style={{
@@ -560,10 +545,7 @@ export default function VenuesPanel({ addToast }) {
             )}
 
             {/* DELETE */}
-            <GoldButton
-              variant="danger"
-              onClick={() => handleDelete(venue.id)}
-            >
+            <GoldButton variant="danger" onClick={() => handleDelete(venue.id)}>
               <Trash2 size={14} />
             </GoldButton>
           </Card>
