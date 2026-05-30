@@ -16,41 +16,45 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Uniqe Events",
+  title: "Unique Events Planner | Wedding & Event Management",
   description:
-    "Mithila Tech & IT Solutions provides modern web development, mobile apps, UI/UX design, and digital solutions to grow your business online.",
+    "Unique Events Planner specializes in weddings, engagements, receptions, birthday parties, corporate events, and unforgettable celebrations. We turn your dream events into reality.",
 
   keywords: [
-    "Mithilatech",
-    "IT Solutions",
-    "web development",
-    "software company",
-    "UI UX design",
-    "mobile app development",
-    "Nepal IT company",
-    "Next.js development",
-    "React developer",
-    "modern websites"
+    "Unique Events Planner",
+    "wedding planner",
+    "event management",
+    "marriage planner",
+    "wedding decoration",
+    "engagement ceremony",
+    "birthday event planning",
+    "corporate events",
+    "event organizer",
+    "wedding coordinator",
+    "event decoration",
+    "Nepal wedding planner",
+    "luxury weddings",
+    "party planner"
   ],
 
-  authors: [{ name: "Mithila Tech" }],
-  creator: "Mithila Tech & IT Solutions",
-  publisher: "Mithilatech",
+  authors: [{ name: "Unique Events Planner" }],
+  creator: "Unique Events Planner",
+  publisher: "Unique Events Planner",
 
-  metadataBase: new URL("https://mimthilatech.com"),
+  metadataBase: new URL("https://uniqueeventsplanner.com"),
 
   openGraph: {
-    title: "Mithila Tech & IT Solutions",
+    title: "Unique Events Planner | Wedding & Event Management",
     description:
-      "We build modern, fast, and scalable websites, apps, and digital products.",
-    url: "https://mimthilatech.com",
-    siteName: "Mithila Tech & IT Solutions",
+      "Creating memorable weddings, receptions, engagements, birthdays, and special events with professional planning and elegant decoration.",
+    url: "https://uniqueeventsplanner.com",
+    siteName: "Unique Events Planner",
     images: [
       {
         url: "/logo.jpeg",
         width: 1200,
         height: 630,
-        alt: "Mithilatech Preview"
+        alt: "Unique Events Planner"
       }
     ],
     locale: "en_US",
@@ -59,10 +63,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Mithila Tech & IT Solutions",
+    title: "Unique Events Planner",
     description:
-      "Modern web development, apps, and UI/UX solutions.",
-    images: ["/mithilatechlogo.jpeg"]
+      "Professional wedding and event planning services for unforgettable celebrations.",
+    images: ["/logo.jpeg"]
   },
 
   icons: {
@@ -88,7 +92,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <html
       lang="en"
@@ -97,9 +100,9 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <LayoutWrapper>
           {children}
-        <Footer/>
+          <Footer />
         </LayoutWrapper>
-        </body>
+      </body>
     </html>
   );
 }
