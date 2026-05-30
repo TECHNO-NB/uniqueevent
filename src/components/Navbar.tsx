@@ -24,13 +24,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    "About",
-    "Services",
-    "Gallery",
-    "Testimonials",
-    "Contact",
-  ];
+  const navLinks = ["About", "Services", "Gallery", "Testimonials", "Contact"];
 
   const handleNavigate = (link: string) => {
     const path = link.toLowerCase();
@@ -53,14 +47,9 @@ export default function Navbar() {
       {/* NAVBAR */}
       <nav
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-        ${
-          scrolled
-            ? "bg-white shadow-md"
-            : "bg-white"
-        }`}
+        ${scrolled ? "bg-white shadow-md" : "bg-white"}`}
       >
         <div className="max-w-6xl mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
-          
           {/* LOGO */}
           <div
             onClick={() => handleNavigate("home")}
@@ -75,7 +64,7 @@ export default function Navbar() {
             />
 
             <span className="text-xl md:text-2xl font-semibold tracking-wide text-[#ffd700]">
-              Unique Event
+              UNIQUE EVENT
             </span>
           </div>
 
@@ -103,7 +92,7 @@ export default function Navbar() {
 
           {/* MOBILE TOGGLE */}
           <button
-            className="md:hidden text-black z-[60]"
+            className="md:hidden text-black z-60"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             {menuOpen ? <X size={28} /> : <Menu size={28} />}

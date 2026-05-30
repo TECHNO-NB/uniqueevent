@@ -163,7 +163,7 @@ const Page = () => {
 
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/45 transition-all duration-500 flex items-center justify-center">
                   <p className="font-display italic text-white opacity-0 group-hover:opacity-100 text-lg transition-all duration-300 translate-y-3 group-hover:translate-y-0">
-                    {item.label}
+                  
                   </p>
                 </div>
               </div>
