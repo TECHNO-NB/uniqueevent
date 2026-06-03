@@ -64,7 +64,7 @@ export default function Navbar() {
             />
 
             <span className="text-xl md:text-2xl font-semibold tracking-wide text-[#ffd700]">
-              UNIQUE EVENT
+              UNIQUE <span className="text-black">EVENT</span>
             </span>
           </div>
 
